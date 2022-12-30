@@ -1,3 +1,7 @@
+<?php
+
+use Core\Helpers\Helper; ?>
+<?php if (Helper::check_permission(['user:read'])) : ?>
 <div class="container mt-5">
     <div class="row">
     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -142,5 +146,5 @@
     </tbody>
 </table>
     </div>
-
 </div>
+<?php endif; ?>
