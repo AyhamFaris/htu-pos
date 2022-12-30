@@ -112,9 +112,21 @@ class Selling extends Controller
     function selling_create()
     {
         $this->permissions(['seller:create']);
-        self::check_if_empty($this->request_body['item_id']);
-        self::check_if_empty($this->request_body['quantity']);
-        self::check_if_empty($this->request_body['total']);
+
+        if (!isset($this->request_body['quantity'])) {
+            $this->http_code = 410;
+            throw new \Exception('quantity_param_not_found');
+        }
+
+        if (!isset($this->request_body['item_id'])) {
+            $this->http_code = 411;
+            throw new \Exception('item_id_param_not_found');
+        }
+
+        if (!isset($this->request_body['total'])) {
+            $this->http_code = 412;
+            throw new \Exception('total_param_not_found');
+        }
 
         $transaction_arr = [
             'item_id' => $this->request_body['item_id'],
@@ -156,7 +168,7 @@ class Selling extends Controller
         } catch (\Exception $error) {
             $this->response_schema['success'] = false;
             $this->response_schema['message_code'] = $error->getMessage();
-            $this->http_code = 421;
+            $this->http_code = 413;
         }
     }
 
