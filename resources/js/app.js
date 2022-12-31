@@ -66,8 +66,6 @@ $(function () {
     });
 
 
-
-
     $.ajax({
         type: "get",
         url: "http://htu.pos/api/items",
