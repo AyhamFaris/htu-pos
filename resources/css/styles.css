@@ -478,7 +478,7 @@ nav.main-menu li.active > a,
     padding: 20px 10px;
     background-color: #fff;
     height: 100px;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: .3s linear all;
   }
 
@@ -487,27 +487,29 @@ nav.main-menu li.active > a,
     transition: .3s linear all;
   }
 
-  .card-counter.primary{
+  .card-counter.users{
     position: relative;
-    background-color: #007bff;
+    background: linear-gradient(to right bottom,rgb(0, 132, 255),rgb(115, 115, 115));
     color: #FFF;
   }
 
-  .card-counter.danger{
+  .card-counter.items{
     position: relative;
     background-color: #ef5350;
+    background: linear-gradient(to right bottom,rgb(255, 46, 46),rgb(115, 115, 115));
     color: #FFF;
   }  
 
-  .card-counter.success{
+  .card-counter.accounts{
     position: relative;
-    background-color: #66bb6a;
+    background: linear-gradient(to right bottom,rgb(67, 255, 46),rgb(115, 115, 115));
     color: #FFF;
   }  
 
-  .card-counter.info{
+  .card-counter.total{
     position: relative;
     background-color: #26c6da;
+    background: linear-gradient(to right bottom,rgb(255, 185, 46),rgb(115, 115, 115));
     color: #FFF;
   }  
 

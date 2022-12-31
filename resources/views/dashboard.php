@@ -6,7 +6,7 @@ use Core\Helpers\Helper; ?>
     <div class="row">
     <div class="col-md-3 col-sm-6 col-xs-12">
       <a href="/users">
-        <div class="card-counter primary">
+        <div class="card-counter users">
             <i class="fa fa-users"></i>
             <span class="count-name">Users</span>
             <span class="count-numbers"><?= $data->total_users ?></span>
@@ -16,7 +16,7 @@ use Core\Helpers\Helper; ?>
 
     <div class="col-md-3 col-sm-6 col-xs-12">
      <a href="/items">
-        <div class="card-counter danger">
+        <div class="card-counter items">
             <i class="fa fa-database"></i>
             <span class="count-name">Items</span>
             <span class="count-numbers"><?= $data->total_items ?></span>
@@ -26,8 +26,8 @@ use Core\Helpers\Helper; ?>
 
     <div class="col-md-3 col-sm-6 col-xs-12">
     <a href="/accounts/page">
-      <div class="card-counter success">
-        <i class="fa fa-ticket"></i>
+      <div class="card-counter accounts">
+        <i class="fa-solid fa-calculator"></i>
         <span class="count-name">Accounts</span>
         <span class="count-numbers">$<?= $data->total_sales ?></span>
       </div>
@@ -35,8 +35,8 @@ use Core\Helpers\Helper; ?>
     </div>
 
     <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="card-counter info">
-        <i class="fa-solid fa-hand-holding-dollar"></i>
+      <div class="card-counter total">
+        <i class="fa-solid fa-bars"></i>
         <span class="count-name">Total Quantity</span>
         <span class="count-numbers"><?= $data->total_quantity ?></span>
       </div>
