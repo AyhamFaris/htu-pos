@@ -16,7 +16,7 @@
                 <tr>
                     <td class="text-center">
                         <div class="d-flex align-items-center">
-                            <img src="<?=$_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST']?>/resources/Images/?>/resources/Images/<?= $user->img ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                            <img src="<?=$_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST']?>/resources/Images/<?= $user->img ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
                             <div class="ms-3">
                                 <p class="fw-bold mb-1"><?= $user->display_name ?></p>
                             </div>
