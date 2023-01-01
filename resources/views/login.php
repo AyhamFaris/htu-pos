@@ -9,7 +9,7 @@
             <input type="text" name="password" placeholder="Your Password">
             <label for="vehicle1">Remeber me</label>
             <input type="checkbox" id="vehicle1" name="remember_me" value="Bike">
-            <button class="submit">LET'S GO</button>
+            <button class="submit">LOGIN</button>
           </form>
         </div>
       </div>

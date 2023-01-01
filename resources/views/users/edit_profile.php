@@ -29,7 +29,7 @@
         <div class="right col-6">
             <div class="card" style="width: 18rem; top:50px">
                 <form id="userInputContainer-img" action="/users/update_img" method="POST" enctype="multipart/form-data">
-                    <img src="<?= "http://" . $_SERVER['HTTP_HOST'] ?>/resources/Images/<?= $data->info->img ?>" class="card-img-top" alt="...">
+                    <img src="<?=$_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST']?>/resources/Images/<?= $data->info->img ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <input type="file" id="uplode-img-edit" class="form-control" name="upload" style="background-color: #ddd;">
                         <button type="submit" class="btn btn-warning mt-3">Update img</button>

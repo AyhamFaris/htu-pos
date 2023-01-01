@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="right">
-        <img src="<?= "http://" . $_SERVER['HTTP_HOST'] ?>/resources/Images/<?= $data->info->img ?>">
+        <img src="<?=$_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST']?>/resources/Images/<?= $data->info->img ?>">
       </div>
     </div>
   </section>

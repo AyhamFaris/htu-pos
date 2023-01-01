@@ -1,10 +1,15 @@
 
-$(function () {
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar, #content').toggleClass('active');
-    });
-});
+const Add_Title = () => {
+    let title_name = document.createElement('title');
+    title_name.textContent = `${document.location.pathname.slice(1).replace('/', ' ')}`;
+    document.head.appendChild(title_name)
+};
 
+
+Add_Title()
+
+
+if (window.location.href === 'http://htu.pos/selling/page') {
 
 $(function () {
     var user_id = $('#user_id');
@@ -168,4 +173,4 @@ $(function () {
         }
     });
 });
-
+}

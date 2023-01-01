@@ -37,7 +37,7 @@ Router::post('/authenticate', "authentication.validate"); // Validation the logi
 // athenticated
 Router::get('/dashboard', "admin.index"); // Displays the admin dashboard
 
-//user   
+//user
 Router::get('/users', "users.index"); // list of users (HTML)
 Router::get('/user/profile', "users.profile"); // user profile (HTML)
 Router::get('/user', "users.single"); // Displays single user (HTML)
