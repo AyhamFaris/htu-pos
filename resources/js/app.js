@@ -4,12 +4,24 @@ const Add_Title = () => {
     title_name.textContent = `${document.location.pathname.slice(1).replace('/', ' ')}`;
     document.head.appendChild(title_name)
 };
-
-
 Add_Title()
 
 
+
 if (window.location.href === 'http://htu.pos/selling/page') {
+
+document.getElementById('add-item').innerHTML = "Add";
+
+const a = document.getElementById('add-item');
+
+        function get_status() {
+
+            if (a.hasAttribute('disabled')) {
+                a.innerHTML = "disabled"
+            } else {
+                a.innerHTML = "Add"
+            }
+        }
 
 $(function () {
     var user_id = $('#user_id');
@@ -97,15 +109,32 @@ $(function () {
                 });
 
                 $('#quantity').change(function () {
-                    quantity_item = $('#quantity').val(),
+                    quantity_item = $('#quantity').val();
+
+                    if (quantity_item > response.body.quantity) {
+                        addItem.attr({
+                            "disabled": true
+                        })
+                        get_status();
+                    }else {
+
                         $("#price").attr({
                             "value": response.body.price * $('#quantity').val(),        // substitute your own         // values (or variables) here
                         });
+
+                        addItem.attr({
+                            "disabled": false
+                        })
+                        get_status();
+
+                    }
                 });
+    
             },
         });
 
     });
+
 
     addItem.click(function (e) {
         e.preventDefault();
