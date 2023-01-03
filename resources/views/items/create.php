@@ -34,11 +34,6 @@
 
                         </div>
 
-                        <div class="col-md-12 mt-3">
-                            <textarea class="form-control" style="color: #C0C0C0;" onfocus="this.style.color='#000000'" placeholder="Your Item Description..(Optional)" id="post-content" style="height: 100px" name="description"></textarea>
-                        </div>
-
-
                         <div class="form-button mt-3">
                             <button type="submit" class="btn btn-success mt-4 mb-2">Create</button>
                             <a href="/items" class="btn btn-danger ms-3 mt-4 mb-2">Cancel</a>
