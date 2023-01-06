@@ -1,7 +1,6 @@
 <?php
 
 namespace Core\Controller;
-
 use Core\Model\Item;
 use Core\Helpers\Tests;
 use Core\Base\Controller;
@@ -28,7 +27,6 @@ class Selling extends Controller
 
     public function render()
     {
-
         header("Content-Type: application/json"); // changes the header information
         http_response_code($this->http_code); // set the HTTP Code for the response
         echo json_encode($this->response_schema); // convert the data to json format

@@ -1,6 +1,6 @@
-    <h1 class="text-center mb-5 mt-5">Items Dashbaord</h1>
-    <!-- <div class="container my-5"> -->
-    <div class="row d-flex justify-content-center align-items-center">
+<div class="container-style mt-5">
+    <div class="item-dashbord">
+        <h1>Items Dashbaord:</h1>
         <table class="table tabel-shadow align-middle mb-0">
             <thead>
                 <tr>
@@ -33,4 +33,4 @@
             </tbody>
         </table>
     </div>
-    </div>
+</div>
