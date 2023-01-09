@@ -6,27 +6,32 @@ use Core\Helpers\Helper; ?>
         <div class="dashbord">
 
             <div class="card-counter users">
-                <div class="inf">
-                    <i class="fa fa-users"></i>
-                    <span class="count-name">Users</span>
-                    <span class="count-numbers"><?= $data->total_users ?></span>
-                </div>
+                <a href="/users">
+                    <div class="inf">
+                        <i class="fa fa-users"></i>
+                        <span class="count-name">Users</span>
+                        <span class="count-numbers"><?= $data->total_users ?></span>
+                    </div>
+                </a>
             </div>
 
             <div class="card-counter items">
+                <a href="/items">
                 <div class="inf">
                     <i class="fa fa-database"></i>
                     <span>Items</span>
                     <span><?= $data->total_items ?></span>
                 </div>
+                </a>
             </div>
 
             <div class="card-counter accounts">
-                <div class="inf">
-                    <i class="fa fa-calculator"></i>
-                    <span>Accounts</span>
-                    <span>$<?= $data->total_sales ?></span>
-                </div>
+                <a href="/accounts/page">
+                    <div class="inf">
+                        <i class="fa fa-calculator"></i>
+                        <span>$<?= $data->total_sales ?></span>
+                    </div>
+                </a>
             </div>
 
             <div class="card-counter total">

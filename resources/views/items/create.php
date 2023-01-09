@@ -1,4 +1,4 @@
-<div class="create-form">
+<div class="style-form">
     <div class="form-items">
         <h2>Create Items</h2>
         <form action="/items/store" method="POST">

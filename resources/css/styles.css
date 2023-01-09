@@ -10,15 +10,15 @@
 }
 
 footer {
-    background: #212121;
-    height    : 3.5rem;
-    position  : static;
-    bottom: 0;
-    left      : 0;
-    width     : 100vw;
-    z-index: 0;
-    color: white;
-  }
+  background: #212121;
+  height: 3.5rem;
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 0;
+  color: white;
+}
 
 .paragrahp {
   font-size: 50px;
@@ -30,16 +30,20 @@ footer {
 
 .table {
   width: 60%;
-  background: linear-gradient(to right bottom,rgb(255, 254, 233),rgb(255, 253, 204));
+  background: linear-gradient(
+    to right bottom,
+    rgb(255, 254, 233),
+    rgb(255, 253, 204)
+  );
   color: rgb(0, 0, 0);
   width: 100%;
   font-weight: bold;
 }
 
-#scrol-table{
+#scrol-table {
   overflow-y: scroll;
-  height    : 400px;
-  display   : block;
+  height: 400px;
+  display: block;
 }
 
 .table th {
@@ -68,14 +72,20 @@ body {
   padding: 0.55rem 1.5rem 0.45rem;
 }
 
-.create-form {
-    margin-top: 20px;
-    padding: 20px;
+.style-form {
+  margin-top: 20px;
+  padding: 20px;
 }
 
-.create-form .form-items {
+.style-form .form-items {
   color: rgb(255, 255, 255);
-  background: linear-gradient(to right bottom,rgb(22, 22, 22),rgb(46, 40, 40));
+  background: linear-gradient(
+    to right bottom,
+    rgb(22, 22, 22),
+    rgb(46, 40, 40)
+  );
+  
+  margin-bottom: 124px;
   opacity: 0.8;
   padding: 40px;
   display: inline-block;
@@ -88,12 +98,12 @@ body {
   transition: all 0.4s ease;
 }
 
-.create-form .form-items form input {
+.style-form .form-items form input {
   color: black;
   font-weight: bold;
 }
 
-.create-form h3 {
+.style-form h3 {
   color: #fff;
   text-align: left;
   font-size: 28px;
@@ -101,11 +111,11 @@ body {
   margin-bottom: 5px;
 }
 
-.create-form h3.form-title {
+.style-form h3.form-title {
   margin-bottom: 30px;
 }
 
-.create-form p {
+.style-form p {
   color: #fff;
   text-align: left;
   font-size: 17px;
@@ -114,10 +124,10 @@ body {
   margin-bottom: 30px;
 }
 
-.create-form input[type="text"],
-.create-form input[type="password"],
-.create-form input[type="email"],
-.create-form select {
+.style-form input[type="text"],
+.style-form input[type="password"],
+.style-form input[type="email"],
+.style-form select {
   width: 100%;
   padding: 9px 20px;
   text-align: left;
@@ -149,7 +159,7 @@ body {
   box-shadow: none;
 }
 
-.create-form textarea {
+.style-form textarea {
   position: static !important;
   width: 100%;
   padding: 8px 20px;
@@ -168,8 +178,8 @@ body {
   margin-bottom: 14px;
 }
 
-.create-form textarea:hover,
-.create-form textarea:focus {
+.style-form textarea:hover,
+.style-form textarea:focus {
   border: 0;
   background-color: #ebeff8;
   color: #ffffff;
@@ -181,15 +191,7 @@ body {
 
 #userInputContainer {
   margin-top: 50px;
-  color: rgb(255, 255, 255);
-  background: linear-gradient(to right bottom,rgb(22, 22, 22),rgb(46, 40, 40));
-  opacity: 0.8;
-  padding: 40px;
-  display: inline-block;
-  border-radius: 10px;
-}
-
-#userInputContainer-img{
+  margin-bottom: 242px;
   color: rgb(255, 255, 255);
   background: linear-gradient(
     to right bottom,
@@ -202,12 +204,26 @@ body {
   border-radius: 10px;
 }
 
-
-
+#userInputContainer-img {
+  color: rgb(255, 255, 255);
+  background: linear-gradient(
+    to right bottom,
+    rgb(22, 22, 22),
+    rgb(46, 40, 40)
+  );
+  opacity: 0.8;
+  padding: 40px;
+  display: inline-block;
+  border-radius: 10px;
+}
 
 #dataTableContainer {
   color: rgb(255, 255, 255);
-  background: linear-gradient(to right bottom,rgb(22, 22, 22),rgb(46, 40, 40));
+  background: linear-gradient(
+    to right bottom,
+    rgb(22, 22, 22),
+    rgb(46, 40, 40)
+  );
   opacity: 0.8;
   padding: 40px;
   display: inline-block;
@@ -217,7 +233,11 @@ body {
 }
 
 #dataTableContainer .table {
-  background: linear-gradient(to right bottom,rgb(22, 22, 22),rgb(46, 40, 40));
+  background: linear-gradient(
+    to right bottom,
+    rgb(22, 22, 22),
+    rgb(46, 40, 40)
+  );
   color: rgb(255, 255, 255);
   width: 100%;
   font-weight: bold;
@@ -398,7 +418,11 @@ nav.main-menu li.active > a,
   overflow: hidden;
   border-radius: 16px;
   color: rgb(255, 255, 255);
-  background: linear-gradient(to right bottom,rgb(22, 22, 22),rgb(46, 40, 40));
+  background: linear-gradient(
+    to right bottom,
+    rgb(22, 22, 22),
+    rgb(46, 40, 40)
+  );
   opacity: 0.8;
   box-shadow: 5px 5px 10px #d9d9d6, -5px -5px 10px #ffffff;
 }
@@ -422,182 +446,196 @@ nav.main-menu li.active > a,
   object-fit: cover;
 }
 
-.left .info .height-card{
-    margin: 50px 0px;
+.left .info .height-card {
+  margin: 50px 0px;
 }
 
-.left .info .height-card p{
+.left .info .height-card p {
   font-family: cursive;
   font-size: 20px;
 }
 
 .button-85 {
-    padding: 0.6em 2em;
-    border: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
 .button-85:before {
-    content: "";
-    background: linear-gradient(
-      45deg,
-      #ff0000,
-      #ff7300,
-      #fffb00,
-      #48ff00,
-      #00ffd5,
-      #002bff,
-      #7a00ff,
-      #ff00c8,
-      #ff0000
-    );
-}  
-  
-
-
-
-
-
-
-
-
-
-.card-counter{
-    box-shadow: 2px 2px 10px #DADADA;
-    margin: 5px;
-    padding: 20px 10px;
-    background-color: #fff;
-    height: 100px;
-    border-radius: 10px;
-    transition: .3s linear all;
-  }
-
-  .card-counter:hover{
-    box-shadow: 4px 4px 20px #DADADA;
-    transition: .3s linear all;
-  }
-
-  .card-counter.users{
-    width: 200px;
-    height: 130px;
-    position: relative;
-    background: linear-gradient(to right bottom,rgb(0, 132, 255),rgb(115, 115, 115));
-    color: #FFF;
-  }
-
-  .card-counter.items{
-    width: 200px;
-    height: 130px;
-    position: relative;
-    background-color: #ef5350;
-    background: linear-gradient(to right bottom,rgb(255, 46, 46),rgb(115, 115, 115));
-    color: #FFF;
-  }
-
-  .card-counter.accounts{
-    width: 200px;
-    height: 130px;
-    position: relative;
-    background: linear-gradient(to right bottom,rgb(67, 255, 46),rgb(115, 115, 115));
-    color: #FFF;
-  }  
-
-  .card-counter.total{
-    width: 200px;
-    height: 130px;
-    position: relative;
-    background: linear-gradient(to right bottom,rgb(255, 185, 46),rgb(115, 115, 115));
-    color: #FFF;
-  } 
-
-  .card-counter .inf{
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  .card-counter i{
-    font-size: 5em;
-    opacity: 0.2;
-  }
-
-
-#sidebarMenu{
-    z-index: 1;
-    background-color: #212121;
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
 }
 
-.position-sticky a{
-    color: white;
+.card-counter {
+  box-shadow: 2px 2px 10px #dadada;
+  margin: 5px;
+  padding: 20px 10px;
+  background-color: #fff;
+  height: 100px;
+  border-radius: 10px;
+  transition: 0.3s linear all;
 }
 
+.card-counter a {
+  text-decoration: none;
+  color: white;
+}
 
+.card-counter:hover {
+  box-shadow: 4px 4px 20px #dadada;
+  transition: 0.3s linear all;
+}
+
+.card-counter.users {
+  width: 200px;
+  height: 130px;
+  position: relative;
+  background: linear-gradient(
+    to right bottom,
+    rgb(0, 132, 255),
+    rgb(115, 115, 115)
+  );
+  font-weight: bold;
+}
+
+.card-counter.items {
+  width: 200px;
+  height: 130px;
+  position: relative;
+  background-color: #ef5350;
+  background: linear-gradient(
+    to right bottom,
+    rgb(255, 46, 46),
+    rgb(115, 115, 115)
+  );
+  font-weight: bold;
+}
+
+.card-counter.accounts {
+  width: 200px;
+  height: 130px;
+  position: relative;
+  background: linear-gradient(
+    to right bottom,
+    rgb(67, 255, 46),
+    rgb(115, 115, 115)
+  );
+  font-weight: bold;
+}
+
+.card-counter.total {
+  width: 200px;
+  height: 130px;
+  position: relative;
+  background: linear-gradient(
+    to right bottom,
+    rgb(255, 185, 46),
+    rgb(115, 115, 115)
+  );
+  color: #fff;
+  font-weight: bold;
+}
+
+.card-counter .inf {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card-counter i {
+  font-size: 5em;
+  opacity: 0.2;
+}
+
+#sidebarMenu {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.position-sticky a {
+  color: white;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+}
+
+@media (max-width: 991.98px) {
   .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    padding: 58px 0 0; /* Height of navbar */
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    width: 240px;
+    width: 100%;
   }
-  
-  @media (max-width: 991.98px) {
-    .sidebar {
-      width: 100%;
-    }
-  }
-  
-  
-  .sidebar-sticky {
-    position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: 0.5rem;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  }
-
-.list-group-item-action:focus, .list-group-item-action:hover {
-    color: rgb(74, 161, 255) !important;
-    text-decoration: none !important;
-    background-color: none !important;
 }
 
-.table-style{
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.list-group-item-action:focus,
+.list-group-item-action:hover {
+  color: rgb(74, 161, 255) !important;
+  text-decoration: none !important;
+  background-color: none !important;
+}
+
+.table-style {
   display: flex;
   flex-wrap: wrap;
 }
 
-.dashbord{
+.dashbord {
   display: flex;
   flex-wrap: wrap;
 }
 
-.selling-dashbord{
+.selling-dashbord {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
-.selling-dashbord .left{
+.selling-dashbord .left {
   margin-right: 22px;
 }
 
-
-
 .selling-dashbord .right {
   color: rgb(255, 255, 255);
-  background: linear-gradient(to right bottom,rgb(22, 22, 22),rgb(46, 40, 40));
+  background: linear-gradient(
+    to right bottom,
+    rgb(22, 22, 22),
+    rgb(46, 40, 40)
+  );
   opacity: 0.8;
   padding: 40px;
   display: inline-block;
@@ -607,7 +645,11 @@ nav.main-menu li.active > a,
 }
 
 .selling-dashbord .right .table {
-  background: linear-gradient(to right bottom,rgb(22, 22, 22),rgb(46, 40, 40));
+  background: linear-gradient(
+    to right bottom,
+    rgb(22, 22, 22),
+    rgb(46, 40, 40)
+  );
   color: rgb(255, 255, 255);
   width: 100%;
   font-weight: bold;
@@ -629,4 +671,43 @@ nav.main-menu li.active > a,
 
 .selling-dashbord .right .table #edit {
   color: rgb(221, 165, 60);
+}
+
+.account-dashbord {
+  margin-bottom: 40px;
+}
+
+.user-dashbord{
+  margin-bottom: 165px;
+}
+
+.item-dashbord{
+  margin-bottom: 150px;
+}
+
+
+.style-form .form-items-edit {
+  color: rgb(255, 255, 255);
+  background: linear-gradient(
+    to right bottom,
+    rgb(22, 22, 22),
+    rgb(46, 40, 40)
+  );
+  
+  margin-bottom: 124px;
+  opacity: 0.8;
+  padding: 40px;
+  display: inline-block;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: left;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.style-form .form-items-edit form input {
+  color: black;
+  font-weight: bold;
 }
