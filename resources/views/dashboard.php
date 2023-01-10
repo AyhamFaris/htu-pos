@@ -4,7 +4,6 @@ use Core\Helpers\Helper; ?>
 <?php if (Helper::check_permission(['user:read'])) : ?>
     <div>
         <div class="dashbord">
-
             <div class="card-counter users">
                 <a href="/users">
                     <div class="inf">
@@ -14,14 +13,13 @@ use Core\Helpers\Helper; ?>
                     </div>
                 </a>
             </div>
-
             <div class="card-counter items">
                 <a href="/items">
-                <div class="inf">
-                    <i class="fa fa-database"></i>
-                    <span>Items</span>
-                    <span><?= $data->total_items ?></span>
-                </div>
+                    <div class="inf">
+                        <i class="fa fa-database"></i>
+                        <span>Items</span>
+                        <span><?= $data->total_items ?></span>
+                    </div>
                 </a>
             </div>
 
@@ -123,6 +121,50 @@ use Core\Helpers\Helper; ?>
                                     <span class="d-block font-weight-bold"><?= $item->id ?></span>
                                 </div>
                             </td>
+                            <td>
+                                <div class="p-2 d-flex flex-row align-items-center mb-2">
+                                    <div class="d-flex flex-column ml-2">
+                                        <span class="d-block font-weight-bold"><?= $item->title ?></span>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="p-2">
+                                    <span class="font-weight-bold">$ <?= $item->price ?></span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="p-2 d-flex flex-column">
+                                    <span><?= $item->quantity ?></span>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="item_quantity">
+        <div class="table-3">
+            <table class="table">
+                <h3 class="text-center" style="color:black;">Item Quantity</h3>
+                <thead>
+                    <tr class="border-bottom">
+                        <th>
+                            <span class="ml-2">Item</span>
+                        </th>
+                        <th>
+                            <span class="ml-2">Price</span>
+                        </th>
+                        <th>
+                            <span class="ml-2">Quantity</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data->item_quantity as $item) : ?>
+                        <tr class="border-bottom">
                             <td>
                                 <div class="p-2 d-flex flex-row align-items-center mb-2">
                                     <div class="d-flex flex-column ml-2">

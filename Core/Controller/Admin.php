@@ -41,6 +41,7 @@ class Admin extends Controller
         $items = $item->get_all();
         $top_5_item = $item->get_top_5();
         $top_5_transaction = $transaction->get_top_5();
+        $item_quantity = $item->get_all();
         $total_quantity=0;
         $transaction = new Transaction();
         $get_all_sales = $transaction->get_all();
@@ -58,5 +59,6 @@ class Admin extends Controller
         $this->data['total_quantity'] = $total_quantity;
         $this->data['top_item'] = $top_5_item;
         $this->data['top_transaction'] = $top_5_transaction;
+        $this->data['item_quantity'] = $item_quantity;
     }
 }

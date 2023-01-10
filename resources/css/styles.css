@@ -190,7 +190,7 @@ body {
 }
 
 #userInputContainer {
-  margin-top: 50px;
+  margin-top: 63px;
   margin-bottom: 242px;
   color: rgb(255, 255, 255);
   background: linear-gradient(
@@ -561,6 +561,10 @@ nav.main-menu li.active > a,
   max-height: 100%;
 }
 
+.card-counter span {
+font-size: 20px;
+}
+
 .card-counter i {
   font-size: 5em;
   opacity: 0.2;
@@ -674,7 +678,7 @@ nav.main-menu li.active > a,
 }
 
 .account-dashbord {
-  margin-bottom: 40px;
+  margin-bottom: 70px;
 }
 
 .user-dashbord{
