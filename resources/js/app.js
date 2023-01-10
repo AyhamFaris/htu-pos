@@ -149,22 +149,20 @@ if (window.location.href === "http://htu.pos/selling/page") {
             i = 1;
             response.body.forEach((element) => {
               table.append(`
-                        <tr id= "${element.id}">
-                            <td>${i++}</td>
-                            <td>${element.title_name}</td>
-                            <td>${element.quantity}</td>
-                            <td>$ ${element.total}</td>
-                            <td>
-                            <a data-id="${
-                              element.id
-                            }"><i id="trash" class="fa-solid fa-x pe-3"></i></a>
-                            <a href="/transactions/edit?id=${
-                              element.id
-                            }&item_id=${
+                <tr id= "${element.id}">
+                    <td>${i++}</td>
+                    <td>${element.title_name}</td>
+                    <td>${element.quantity}</td>
+                    <td>$ ${element.total}</td>
+                    <td>
+                    <a data-id="${
+                      element.id
+                    }"><i id="trash" class="fa-solid fa-x pe-3"></i></a>
+                    <a href="/transactions/edit?id=${element.id}&item_id=${
                 element.item_id
               }"><i id="edit" class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-                        </tr>
+                    </td>
+                </tr>
                 `);
               $(`a[data-id="${element.id}"]`).click(function () {
                 let data = {
