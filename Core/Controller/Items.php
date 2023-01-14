@@ -95,6 +95,11 @@ class Items extends Controller
         $_POST['price'] =  \htmlspecialchars($_POST['price']);
         $_POST['quantity'] =  \htmlspecialchars($_POST['quantity']);
 
+        $target =  "./resources/Images/";
+        $Name_img = basename($_FILES["upload"]["name"]);
+        move_uploaded_file($_FILES['upload']['tmp_name'], $target . $Name_img);
+        $_POST['img'] = $Name_img;
+
         $result = self::check_empty();
         if ($result) {
             $item->create($_POST);

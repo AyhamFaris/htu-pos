@@ -1,7 +1,7 @@
 <div class="style-form">
     <div class="form-items">
         <h2>Create Items</h2>
-        <form action="/items/store" method="POST">
+        <form action="/items/store" method="POST" enctype="multipart/form-data">
 
             <?php
             if (!empty($_SESSION) && isset($_SESSION['errors']) && !empty($_SESSION['errors'])) : ?>
@@ -16,19 +16,22 @@
 
             <div class="">
                 <input style="color: #C0C0C0;" onfocus="this.style.color='#000000'" class="form-control" type="text" name="title" placeholder="Item Title" required>
-
             </div>
 
             <div class="mt-3">
                 <input style="color: #C0C0C0;" onfocus="this.style.color='#000000'" class="form-control " type="number" name="cost" placeholder="Item Cost" required>
             </div>
+
             <div class="mt-3">
                 <input style="color: #C0C0C0;" onfocus="this.style.color='#000000'" class="form-control" type="number" name="price" placeholder="Item Price" required>
-
             </div>
+
             <div class="mt-3">
                 <input style="color: #C0C0C0;" onfocus="this.style.color='#000000'" class="form-control" type="number" name="quantity" placeholder="Quantity" required>
+            </div>
 
+            <div class="mt-3">
+                <input type="file" id="uplode-img-edit" class="form-control" name="upload" style="background-color: #ddd;">
             </div>
 
             <div class="form-button mt-3">

@@ -5,7 +5,7 @@
             <thead>
                 <tr>
                     <th class="text-center">#</th>
-                    <th class="text-center">Title</th>
+                    <th class="text-center">Item Name</th>
                     <th class="text-center">Price</th>
                     <th class="text-center">Quantity</th>
                     <th class="text-center">Action</th>
@@ -19,7 +19,12 @@
                             <p class="fw-bold mb-1"><?= $i++ ?></p>
                         </td>
                         <td class="text-center">
-                            <p class="fw-bold"><?= $item->title ?></p>
+                            <div class="d-flex align-items-center">
+                                <img src="<?= $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] ?>/resources/Images/<?= $item->img ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?= $item->title ?></p>
+                                </div>
+                            </div>
                         </td>
 
                         <td class="text-center">$<?= $item->price ?></td>

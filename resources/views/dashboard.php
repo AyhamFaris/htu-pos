@@ -152,7 +152,7 @@ use Core\Helpers\Helper; ?>
                 <thead>
                     <tr class="border-bottom">
                         <th>
-                            <span class="ml-2">Item</span>
+                            <span class="ml-2">Item Name</span>
                         </th>
                         <th>
                             <span class="ml-2">Price</span>
@@ -167,11 +167,13 @@ use Core\Helpers\Helper; ?>
                         <tr class="border-bottom">
                             <td>
                                 <div class="p-2 d-flex flex-row align-items-center mb-2">
-                                    <div class="d-flex flex-column ml-2">
-                                        <span class="d-block font-weight-bold"><?= $item->title ?></span>
+                                    <div class="d-flex align-items-center">
+                                        <img src="<?= $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] ?>/resources/Images/<?= $item->img ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                        <div class="ms-3">
+                                            <p class="fw-bold mb-1"><?= $item->title ?></p>
+                                        </div>
                                     </div>
                                 </div>
-
                             </td>
                             <td>
                                 <div class="p-2">
