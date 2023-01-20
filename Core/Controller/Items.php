@@ -70,46 +70,53 @@ class Items extends Controller
         try {
 
             if (empty($_POST['title'])) {
-                    $this->http_code = 421;
-                    throw new \Exception('item_name_param_not_found');
+
+                $_SESSION['error_type'] = "error";
+                $_SESSION['message'] = 'item_name_param_not_found';
+                Helper::redirect('/items/create');
             }
 
             if (empty($_POST['cost'])) {
-                    $this->http_code = 422;
-                    throw new \Exception('cost_of_item_not_found');
+
+                $_SESSION['error_type'] = "error";
+                $_SESSION['message'] = 'cost_of_item_not_found';
+                Helper::redirect('/items/create');
             }
 
             if (empty($_POST['price'])) {
-                    $this->http_code = 423;
-                    throw new \Exception('price_of_item_not_found');
+                $_SESSION['error_type'] = "error";
+                $_SESSION['message'] = 'price_of_item_not_found';
+                Helper::redirect('/items/create');
             }
             if (empty($_POST['quantity'])) {
-                    $this->http_code = 423;
-                    throw new \Exception('quantity_of_item_not_found');
+
+                $_SESSION['error_type'] = "error";
+                $_SESSION['message'] = 'quantity_of_item_not_found';
+                Helper::redirect('/items/create');
             }
 
-        $item = new Item();
-        $_POST['user_id'] = $_SESSION['user']['user_id'];
-        $_POST['title'] =  \htmlspecialchars($_POST['title']);
-        $_POST['cost'] =  \htmlspecialchars($_POST['cost']);
-        $_POST['price'] =  \htmlspecialchars($_POST['price']);
-        $_POST['quantity'] =  \htmlspecialchars($_POST['quantity']);
+            $item = new Item();
+            $_POST['user_id'] = $_SESSION['user']['user_id'];
+            $_POST['title'] =  \htmlspecialchars($_POST['title']);
+            $_POST['cost'] =  \htmlspecialchars($_POST['cost']);
+            $_POST['price'] =  \htmlspecialchars($_POST['price']);
+            $_POST['quantity'] =  \htmlspecialchars($_POST['quantity']);
 
-        $target =  "./resources/Images/";
-        $Name_img = basename($_FILES["upload"]["name"]);
-        move_uploaded_file($_FILES['upload']['tmp_name'], $target . $Name_img);
-        $_POST['img'] = $Name_img;
+            $target =  "./resources/Images/";
+            $Name_img = basename($_FILES["upload"]["name"]);
+            move_uploaded_file($_FILES['upload']['tmp_name'], $target . $Name_img);
+            $_POST['img'] = $Name_img;
 
-        $result = self::check_empty();
-        if ($result) {
-            $item->create($_POST);
-            $_SESSION['error_type'] = "success";
-            $_SESSION['message'] = 'Item Created';
-            Helper::redirect('/items');
-        }
-    }catch (\Exception $error) {
-                $this->response_schema['success'] = false;
-                $this->response_schema['message_code'] = $error->getMessage();
+            $result = self::check_empty();
+            if ($result) {
+                $item->create($_POST);
+                $_SESSION['error_type'] = "success";
+                $_SESSION['message'] = 'Item Created';
+                Helper::redirect('/items');
+            }
+        } catch (\Exception $error) {
+            $this->response_schema['success'] = false;
+            $this->response_schema['message_code'] = $error->getMessage();
         }
     }
 

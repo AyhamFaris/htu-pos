@@ -14,7 +14,7 @@
                 <?php
                 foreach ($data->users as $user) :
                    $Last_seen = new \DateTime($user->last_seen);
-                   $user->last_seen = $Last_seen->format('d/m/y')
+                   $user->last_seen = $Last_seen->format('d/m/y');
                  ?>
                     <tr>
                         <td class="text-center">
