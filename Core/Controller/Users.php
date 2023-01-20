@@ -187,8 +187,36 @@ class Users extends Controller
                 $_POST['password'] = empty($_POST['new-password']) ? $user_info->password : $password_new;
                 unset($_POST['new-password']);
 
+                if (empty($_POST['username'])) {
 
+                        $_SESSION['error_type'] = "error";
+                        $_SESSION['message'] = 'username_param_not_found';
+                        Helper::redirect('/users/edit?id='.$_POST['id']);
+                        die();
+                }
 
+                if (empty($_POST['display_name'])) {
+
+                        $_SESSION['error_type'] = "error";
+                        $_SESSION['message'] = 'display_name_param_not_found';
+                        Helper::redirect('/users/edit?id='.$_POST['id']);
+                        die();
+                }
+
+                if (empty($_POST['email'])) {
+
+                        $_SESSION['error_type'] = "error";
+                        $_SESSION['message'] = 'email_param_not_found';
+                        Helper::redirect('/users/edit?id='.$_POST['id']);
+                        die();
+                }
+                if (empty($_POST['password'])) {
+
+                        $_SESSION['error_type'] = "error";
+                        $_SESSION['message'] = 'password_param_not_found';
+                        Helper::redirect('/users/edit?id='.$_POST['id']);
+                        die();
+                }
 
                 $user->update($_POST);
                 $_SESSION['error_type'] = "success";
