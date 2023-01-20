@@ -74,27 +74,27 @@ class Users extends Controller
 
                                 $_SESSION['error_type'] = "error";
                                 $_SESSION['message'] = 'username_param_not_found';
-                                Helper::redirect('/items/create');
+                                Helper::redirect('/users/create');
                         }
 
                         if (empty($_POST['display_name'])) {
 
                                 $_SESSION['error_type'] = "error";
                                 $_SESSION['message'] = 'display_name_param_not_found';
-                                Helper::redirect('/items/create');
+                                Helper::redirect('/users/create');
                         }
 
                         if (empty($_POST['email'])) {
 
                                 $_SESSION['error_type'] = "error";
                                 $_SESSION['message'] = 'email_param_not_found';
-                                Helper::redirect('/items/create');
+                                Helper::redirect('/users/create');
                         }
                         if (empty($_POST['password'])) {
 
                                 $_SESSION['error_type'] = "error";
                                 $_SESSION['message'] = 'password_param_not_found';
-                                Helper::redirect('/items/create');
+                                Helper::redirect('/users/create');
                         }
 
 
@@ -186,6 +186,10 @@ class Users extends Controller
                 $password_new = empty($_POST['new-password']) ? NULL : \password_hash($_POST['new-password'], \PASSWORD_DEFAULT);
                 $_POST['password'] = empty($_POST['new-password']) ? $user_info->password : $password_new;
                 unset($_POST['new-password']);
+
+
+
+
                 $user->update($_POST);
                 $_SESSION['error_type'] = "success";
                 $_SESSION['message'] = 'user updated';
