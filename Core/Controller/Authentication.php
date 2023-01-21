@@ -82,6 +82,11 @@ class Authentication extends Controller
 
         $permissions = \unserialize($logged_in_user->permissions);
 
+        $user_online = new User();
+        $id_user = $_SESSION['user']['user_id'];
+        $sql = "UPDATE users SET status = 'Online' WHERE id = $id_user";
+        $user_online->connection->query($sql);
+
         if (in_array('user:read', $permissions)) {
             Helper::redirect('/dashboard');
             die;
@@ -105,6 +110,12 @@ class Authentication extends Controller
 
     public function logout()
     {
+
+        $user_online = new User();
+        $id_user = $_SESSION['user']['user_id'];
+        $sql = "UPDATE users SET status = 'offline',last_seen = now() WHERE id = $id_user";
+        $user_online->connection->query($sql);
+
         \session_destroy();
         \session_unset();
         \setcookie('user_id', '', time() - 3600); // destroy the cookie by setting a past expiry date

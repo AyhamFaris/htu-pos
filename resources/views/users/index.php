@@ -12,13 +12,26 @@
             </thead>
             <tbody>
                 <?php
-                foreach ($data->users as $user) : ?>
+                foreach ($data->users as $user) :
+                   $Last_seen = new \DateTime($user->last_seen);
+                   $user->last_seen = $Last_seen->format('d/m/y');
+                 ?>
                     <tr>
                         <td class="text-center">
                             <div class="d-flex align-items-center">
                                 <img src="<?= $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] ?>/resources/Images/<?= $user->img ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1"><?= $user->display_name ?></p>
+                                    <?php if ($user->status == "Online") { ?>
+                                        <p class="fw-bold mb-1"><?= $user->display_name ?></p>
+                                        <p style="color: green;">Online</p>
+                                    <?php } else {
+                                        
+                                        
+                                        
+                                        ?>
+                                        <p class="fw-bold mb-1"><?= $user->display_name ?></p>
+                                        <p style="color: red;"><i class="fa-solid fa-power-off me-1"></i>Last Seen in : <?= $user->last_seen?></p>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </td>

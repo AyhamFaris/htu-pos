@@ -1,4 +1,4 @@
-<div class="create-form">
+<div class="style-form">
     <div class="form-items">
         <h2>Create User</h2>
         <form action="/users/store" method="POST">

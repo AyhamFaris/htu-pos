@@ -71,64 +71,72 @@ class Users extends Controller
                 try {
 
                         if (empty($_POST['username'])) {
-                                $this->http_code = 421;
-                                throw new \Exception('username_param_not_found');
+
+                                $_SESSION['error_type'] = "error";
+                                $_SESSION['message'] = 'username_param_not_found';
+                                Helper::redirect('/users/create');
                         }
 
                         if (empty($_POST['display_name'])) {
-                                $this->http_code = 422;
-                                throw new \Exception('display_name_param_not_found');
+
+                                $_SESSION['error_type'] = "error";
+                                $_SESSION['message'] = 'display_name_param_not_found';
+                                Helper::redirect('/users/create');
                         }
 
                         if (empty($_POST['email'])) {
-                                $this->http_code = 423;
-                                throw new \Exception('email_param_not_found');
+
+                                $_SESSION['error_type'] = "error";
+                                $_SESSION['message'] = 'email_param_not_found';
+                                Helper::redirect('/users/create');
                         }
                         if (empty($_POST['password'])) {
-                                $this->http_code = 423;
-                                throw new \Exception('password_param_not_found');
+
+                                $_SESSION['error_type'] = "error";
+                                $_SESSION['message'] = 'password_param_not_found';
+                                Helper::redirect('/users/create');
                         }
-                        
 
-                        
-                $user = new User();
-                $_POST['username'] =  \htmlspecialchars($_POST['username']);
-                $_POST['display_name'] =  \htmlspecialchars($_POST['display_name']);
-                $_POST['email'] =  \htmlspecialchars($_POST['email']);
 
-                $permissions = null;
-                switch ($_POST['role']) {
-                        case 'admin':
-                                $permissions = User::ADMIN;
-                                break;
 
-                        case 'procurement':
-                                $permissions = User::PROCUREMENT;
-                                break;
+                        $user = new User();
+                        $_POST['username'] =  \htmlspecialchars($_POST['username']);
+                        $_POST['display_name'] =  \htmlspecialchars($_POST['display_name']);
+                        $_POST['email'] =  \htmlspecialchars($_POST['email']);
 
-                        case 'seller':
-                                $permissions = User::SELLER;
-                                break;
+                        $permissions = null;
+                        switch ($_POST['role']) {
+                                case 'admin':
+                                        $permissions = User::ADMIN;
+                                        break;
 
-                        case 'account':
-                                $permissions = User::ACCOUNT;
-                                break;
+                                case 'procurement':
+                                        $permissions = User::PROCUREMENT;
+                                        break;
+
+                                case 'seller':
+                                        $permissions = User::SELLER;
+                                        break;
+
+                                case 'account':
+                                        $permissions = User::ACCOUNT;
+                                        break;
+                        }
+                        unset($_POST['role']);
+                        $_POST['permissions'] = \serialize($permissions);
+
+                        $result = self::check_empty_user();
+                        if ($result) {
+                                $_POST['password'] = \password_hash($_POST['password'], \PASSWORD_DEFAULT);
+                                $user->create($_POST);
+                                $_SESSION['error_type'] = "success";
+                                $_SESSION['message'] = 'user Created';
+                                Helper::redirect('/users');
+                        }
+                } catch (\Exception $error) {
+                        $this->response_schema['success'] = false;
+                        $this->response_schema['message_code'] = $error->getMessage();
                 }
-                unset($_POST['role']);
-                $_POST['permissions'] = \serialize($permissions);
-
-                $result = self::check_empty_user();
-                if ($result) {
-                        $_POST['password'] = \password_hash($_POST['password'], \PASSWORD_DEFAULT);
-                        $user->create($_POST);
-                        $_SESSION['error_type'] = "success";
-                        $_SESSION['message'] = 'user Created';
-                        Helper::redirect('/users');
-                }
-        }catch (\Exception $error) {
-                $this->response_schema['success'] = false;
-                $this->response_schema['message_code'] = $error->getMessage();
-        }
         }
 
         /**
@@ -178,6 +186,38 @@ class Users extends Controller
                 $password_new = empty($_POST['new-password']) ? NULL : \password_hash($_POST['new-password'], \PASSWORD_DEFAULT);
                 $_POST['password'] = empty($_POST['new-password']) ? $user_info->password : $password_new;
                 unset($_POST['new-password']);
+
+                if (empty($_POST['username'])) {
+
+                        $_SESSION['error_type'] = "error";
+                        $_SESSION['message'] = 'username_param_not_found';
+                        Helper::redirect('/users/edit?id='.$_POST['id']);
+                        die();
+                }
+
+                if (empty($_POST['display_name'])) {
+
+                        $_SESSION['error_type'] = "error";
+                        $_SESSION['message'] = 'display_name_param_not_found';
+                        Helper::redirect('/users/edit?id='.$_POST['id']);
+                        die();
+                }
+
+                if (empty($_POST['email'])) {
+
+                        $_SESSION['error_type'] = "error";
+                        $_SESSION['message'] = 'email_param_not_found';
+                        Helper::redirect('/users/edit?id='.$_POST['id']);
+                        die();
+                }
+                if (empty($_POST['password'])) {
+
+                        $_SESSION['error_type'] = "error";
+                        $_SESSION['message'] = 'password_param_not_found';
+                        Helper::redirect('/users/edit?id='.$_POST['id']);
+                        die();
+                }
+
                 $user->update($_POST);
                 $_SESSION['error_type'] = "success";
                 $_SESSION['message'] = 'user updated';
