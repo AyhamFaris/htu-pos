@@ -9,6 +9,10 @@
   background: linear-gradient(to right, #222222, #3c3c3d);
 }
 
+.nav{
+ display: none;   
+}
+
 footer {
   background: #212121;
   height: 3.5rem;

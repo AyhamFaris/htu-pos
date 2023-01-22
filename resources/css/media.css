@@ -1,34 +1,87 @@
-@media (max-width:1255px) {
-
-  .card-counter{
+@media (max-width: 1255px) {
+  .card-counter {
     width: 300px;
-    box-shadow: 2px 2px 10px #DADADA;
+    box-shadow: 2px 2px 10px #dadada;
     margin: 5px;
     padding: 20px 10px;
     background-color: #fff;
     height: 100px;
     border-radius: 10px;
-    transition: .3s linear all;
+    transition: 0.3s linear all;
   }
 
-  .selling-dashbord .left{
-      margin-right: unset;
-      margin-bottom: 22px;
-    }
-  .selling-title{
-      text-align: center;
-      margin-top: 10px;
+  .selling-dashbord .left {
+    margin-right: unset;
+    margin-bottom: 22px;
   }
-  .user-dashbord{
-      overflow-x: scroll;
-      padding: 0 20px;
+  .selling-title {
+    text-align: center;
+    margin-top: 10px;
   }
-  .item-dashbord{
-      overflow-x: scroll;
-      padding: 0 20px;
+  .user-dashbord {
+    overflow-x: scroll;
+    padding: 0 20px;
   }
-  .account-dashbord{
-      overflow-x: scroll;
-      padding: 0 20px;
+  .item-dashbord {
+    overflow-x: scroll;
+    padding: 0 20px;
+  }
+  .account-dashbord {
+    overflow-x: scroll;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 986px) {
+
+.nav{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 0 2% 0 0;
+
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav ul li{
+  display: inline-block;
+  padding: 15px;
+  
+}
+
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+}
+
+@media (max-width: 535px) {
+
+  .admin-view .mobail{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .nav ul{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0 2% 0 0;
+    flex-direction: column;
+  }
+  nav ul li{
+    display: inline-block;
+    padding: 15px;
   }
 }
