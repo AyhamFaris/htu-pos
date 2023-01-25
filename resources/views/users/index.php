@@ -23,7 +23,6 @@
                                 <div class="ms-3">
                                     <?php if ($user->status == "Online") { ?>
                                         <p class="fw-bold mb-1"><?= $user->display_name ?></p>
-                                        <p style="color: green;">Online</p>
                                     <?php } else {
                                         
                                         
