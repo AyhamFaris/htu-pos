@@ -6,8 +6,8 @@
         <table class="table tabel-shadow align-middle mb-0">
             <thead class="bg-light">
                 <tr>
-                    <th class="ps-5">Name User</th>
-                    <th>Item Name</th>
+                    <th class="ps-5">User Name</th>
+                    <th class="ps-5">Item Name</th>
                     <th>Quantity</th>
                     <th>Total</th>
                     <th>created_at</th>
@@ -30,7 +30,12 @@
                             </div>
                         </td>
                         <td>
-                            <?= $transaction->title ?>
+                        <div class="d-flex align-items-center">
+                                <img src="<?= $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] ?>/resources/Images/<?= $transaction->img_item ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?= $transaction->title ?></p>
+                                </div>
+                            </div>
                         </td>
                         <td class="ps-4">
                             <?= $transaction->quantity ?>

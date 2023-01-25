@@ -63,7 +63,7 @@ class Transaction extends Model
 
     public function get_top_5(): array
     {
-        $stmt_join_3 = $this->connection->prepare("SELECT transactions.*,items.title as title_name FROM transactions JOIN items ON transactions.item_id=items.id ORDER BY transactions.id desc  LIMIT 5");
+        $stmt_join_3 = $this->connection->prepare("SELECT transactions.*,items.title as title_name,items.img as img_item FROM transactions JOIN items ON transactions.item_id=items.id ORDER BY transactions.id desc  LIMIT 5");
         $stmt_join_3->execute();
         $result = $stmt_join_3->get_result();
         $stmt_join_3->close();
