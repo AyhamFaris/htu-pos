@@ -11,7 +11,12 @@ $.ajax({
   type: "get",
   url: "http://htu.pos/api/selling/item/quantity",
   success: function (response) {
-      var barColors = ["red", "green", "blue", "orange", "brown" ,"Pink" , "black"];
+      var barColors = [];
+
+      for (let index = 0; index < response.body.length; index++) {
+         barColors.push("#" + Math.floor(Math.random()*16777215).toString(16));
+      }
+
       var xValues = [] ;
       var yValues = [] ;
       response.body.forEach(element => {
