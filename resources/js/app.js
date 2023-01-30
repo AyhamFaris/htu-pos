@@ -7,6 +7,42 @@ const Add_Title = () => {
 };
 Add_Title();
 
+$.ajax({
+  type: "get",
+  url: "http://htu.pos/api/selling/item/quantity",
+  success: function (response) {
+      var barColors = ["red", "green", "blue", "orange", "brown" ,"Pink" , "black"];
+      var xValues = [] ;
+      var yValues = [] ;
+      response.body.forEach(element => {
+          xValues.push(element.title);
+          yValues.push(parseInt(element.quantity));
+      });
+      yValues.push(parseInt(5));
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: "Total Item"
+            }
+        }
+    });
+    console.log(response);
+  },
+});
+
+
 if (window.location.href === "http://htu.pos/selling/page") {
   document.getElementById("add-item").innerHTML = "Add";
 
@@ -14,7 +50,7 @@ if (window.location.href === "http://htu.pos/selling/page") {
 
   function get_status() {
     if (a.hasAttribute("disabled")) {
-      a.innerHTML = "disabled";
+      a.innerHTML = "You cannot complete the process";
     } else {
       a.innerHTML = "Add";
     }
@@ -85,7 +121,7 @@ if (window.location.href === "http://htu.pos/selling/page") {
       success: function (response) {
         var id_data = 1;
         response.body.forEach((element) => {
-          $("#items").append(`
+          $(items).append(`
                   <option id = "${id_data++}" value = ${element.id}> ${
             element.title
           }</option>
@@ -94,7 +130,7 @@ if (window.location.href === "http://htu.pos/selling/page") {
       },
     });
 
-    $("#items").change(function () {
+    $(items).change(function () {
       item_id = $(this).children(":selected").attr("value");
       $.ajax({
         type: "post",
@@ -142,7 +178,6 @@ if (window.location.href === "http://htu.pos/selling/page") {
           type: "post",
           url: "http://htu.pos/api/selling/create",
           data: JSON.stringify(data),
-
           success: function (response) {
             alertify.set("notifier", "position", "top-right");
             alertify.success("The Transaction Added");
@@ -194,7 +229,7 @@ if (window.location.href === "http://htu.pos/selling/page") {
       } else {
         alertify.set("notifier", "position", "top-right");
         alertify.notify(
-          "You must enter the required quantity or required item"
+          "must enter the required quantity"
         );
       }
     });

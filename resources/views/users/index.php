@@ -1,6 +1,19 @@
+<?php
+use Core\Helpers\Helper;
+
+?>
+
+
 <div class="container-style mt-5">
     <div class="user-dashbord">
-        <h1>Users Dashboard:</h1>
+        <div>
+            <h1>Users Dashboard:</h1>
+            <?php if (Helper::check_permission(['user:create'])) : ?>
+                <button class="btn btn-primary mb-2">
+                    <a href="/users/create" class="list-group-item list-group-item-action ripple"><i class="fa-solid fa-user-plus fa-fw me-3"></i><span>add user</span></a>
+                </button>
+            <?php endif; ?>
+        </div>
         <table class="table tabel-shadow align-middle mb-0 bg-white">
             <thead class="bg-light">
                 <tr>
@@ -13,9 +26,9 @@
             <tbody>
                 <?php
                 foreach ($data->users as $user) :
-                   $Last_seen = new \DateTime($user->last_seen);
-                   $user->last_seen = $Last_seen->format('d/m/y');
-                 ?>
+                    $Last_seen = new \DateTime($user->last_seen);
+                    $user->last_seen = $Last_seen->format('d/m/y');
+                ?>
                     <tr>
                         <td class="text-center">
                             <div class="d-flex align-items-center">
@@ -24,12 +37,12 @@
                                     <?php if ($user->status == "Online") { ?>
                                         <p class="fw-bold mb-1"><?= $user->display_name ?></p>
                                     <?php } else {
-                                        
-                                        
-                                        
-                                        ?>
+
+
+
+                                    ?>
                                         <p class="fw-bold mb-1"><?= $user->display_name ?></p>
-                                        <p style="color: red;"><i class="fa-solid fa-power-off me-1"></i>Last Seen in : <?= $user->last_seen?></p>
+                                        <p style="color: red;"><i class="fa-solid fa-power-off me-1"></i>Last Seen in : <?= $user->last_seen ?></p>
                                     <?php } ?>
                                 </div>
                             </div>

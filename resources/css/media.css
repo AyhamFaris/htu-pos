@@ -80,6 +80,16 @@ nav ul li a:hover{
     margin-right: 0 2% 0 0;
     flex-direction: column;
   }
+
+  .info-chart{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0 2% 0 0;
+    flex-direction: column;
+  }
+
   nav ul li{
     display: inline-block;
     padding: 15px;

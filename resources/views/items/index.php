@@ -1,6 +1,21 @@
+<?php
+
+use Core\Helpers\Helper;
+
+?>
+
 <div class="container-style mt-5">
     <div class="item-dashbord">
-        <h1>Items Dashbaord:</h1>
+        <div>
+            <h1>Items Dashbaord:</h1>
+            <?php if (Helper::check_permission(['item:create'])) : ?>
+                <button class="btn btn-primary mb-2">
+                    <a href="/items/create" class="list-group-item list-group-item-action ripple">
+                        <i class="fa-solid fa-plus fa-fw me-3"></i><span>add item</span>
+                    </a>
+                </button>
+            <?php endif; ?>
+        </div>
         <table class="table tabel-shadow align-middle mb-0">
             <thead>
                 <tr>

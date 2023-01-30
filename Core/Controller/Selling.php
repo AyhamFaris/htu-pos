@@ -192,4 +192,25 @@ class Selling extends Controller
         $transaction = new Transaction();
         $transaction->delete($this->request_body['id']);
     }
+
+    public function item_quantity()
+    {
+        $this->permissions(['seller:read']);
+        $item = new Item;
+        $items = $item->get_all();
+        
+        try {
+            if (empty($items)) {
+                throw new \Exception('No items found Today!');
+            }
+            $this->response_schema['body'] = $items;
+            $this->response_schema['message_code'] = "items_collected_successfuly";
+            
+        } catch (\Exception $error) {
+            $this->response_schema['success'] = false;
+            $this->response_schema['message_code'] = $error->getMessage();
+            $this->http_code = 404;
+        }
+    }
+
 }

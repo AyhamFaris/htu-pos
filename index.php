@@ -63,6 +63,7 @@ Router::get('/items/delete', "items.delete"); // Delete the item (PHP)
 Router::post('/api/item', 'selling.items_by_id');
 Router::get('/api/items', 'selling.items');
 Router::get('/api/selling', 'selling.index');
+Router::get('/api/selling/item/quantity', 'selling.item_quantity');
 Router::post('/api/selling/create', 'selling.selling_create');
 Router::post('/api/selling/delete', 'selling.selling_delete');
 

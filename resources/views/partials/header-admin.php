@@ -94,16 +94,8 @@ use Core\Helpers\Helper; ?>
                                 <i class="fa-solid fa-users-gear fa-fw me-3"></i><span>Users</span>
                             </a>
                         <?php endif; ?>
-                        <?php if (Helper::check_permission(['user:create'])) : ?>
-                            <a href="/users/create" class="list-group-item list-group-item-action py-2 ripple mt-3"><i class="fa-solid fa-user-plus fa-fw me-3"></i><span>add user</span></a>
-                        <?php endif; ?>
                         <?php if (Helper::check_permission(['item:read'])) : ?>
                             <a href="/items" class="list-group-item list-group-item-action py-2 ripple mt-3"><i class="fa-solid fa-database fa-fw me-3"></i></i><span>Items</span></a>
-                        <?php endif; ?>
-                        <?php if (Helper::check_permission(['item:create'])) : ?>
-                            <a href="/items/create" class="list-group-item list-group-item-action py-2 ripple mt-3">
-                                <i class="fa-solid fa-plus fa-fw me-3"></i><span>add item</span>
-                            </a>
                         <?php endif; ?>
                         <?php if (Helper::check_permission(['account:read'])) : ?>
                             <a href="/accounts/page" class="list-group-item list-group-item-action py-2 ripple mt-3"><i class="fa-solid fa-file-invoice fa-fw me-3"></i><span>Accounts</span></a>

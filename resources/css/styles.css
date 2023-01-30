@@ -5,8 +5,8 @@
 .navbar {
   /* background-color: #0c0f11; */
   z-index: 4;
-  background: -webkit-linear-gradient(to right, #383838, #333333);
-  background: linear-gradient(to right, #222222, #3c3c3d);
+  background: linear-gradient(to right, #005877, #090808);
+
 }
 
 .nav{
@@ -157,10 +157,11 @@ body {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #495056;
+  background-color: #00ff0d;
   outline: none !important;
   border: none !important;
   box-shadow: none;
+  color: white;
 }
 
 .style-form textarea {
@@ -563,6 +564,10 @@ nav.main-menu li.active > a,
 .card-counter .inf {
   max-width: 100%;
   max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card-counter span {
@@ -576,7 +581,7 @@ font-size: 20px;
 
 #sidebarMenu {
   z-index: 1;
-  background-color: #212121;
+  background-color: #005877
 }
 
 .position-sticky a {
@@ -615,10 +620,7 @@ font-size: 20px;
   background-color: none !important;
 }
 
-.table-style {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .dashbord {
   display: flex;
