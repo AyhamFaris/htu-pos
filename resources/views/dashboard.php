@@ -27,8 +27,8 @@ use Core\Helpers\Helper; ?>
                 <a href="/accounts/page">
                     <i class="fa fa-calculator"></i>
                     <div class="inf">
-                        <span>Total price</span>
-                        <span>$<?= $data->total_sales ?></span>
+                        <span>Total Transaction</span>
+                        <span><?= $data->tolal_transaction ?></span>
                     </div>
                 </a>
             </div>
@@ -40,20 +40,10 @@ use Core\Helpers\Helper; ?>
                     <span><?= $data->total_quantity ?></span>
                 </div>
             </div>
-
-            <div class="card-counter total">
-                <a href="/accounts/page">
-                    <div class="inf">
-                        <span>Total Transaction</span>
-                        <span><?= $data->tolal_transaction ?></span>
-                    </div>
-                </a>
-            </div>
-
         </div>
     </div>
 
-    
+
     <div class="info-chart mt-5 d-flex justify-content-center align-items-center">
         <div>
             <h3 style="color:black;">The 5 most Expensive Items</h3>
