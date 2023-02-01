@@ -1,6 +1,7 @@
 <?php
 
 namespace Core\Controller;
+
 use Core\Model\Item;
 use Core\Helpers\Tests;
 use Core\Base\Controller;
@@ -71,7 +72,6 @@ class Selling extends Controller
             }
             $this->response_schema['body'] = $transactions;
             $this->response_schema['message_code'] = "transactions_collected_successfuly";
-            
         } catch (\Exception $error) {
             $this->response_schema['success'] = false;
             $this->response_schema['message_code'] = $error->getMessage();
@@ -141,22 +141,21 @@ class Selling extends Controller
             if ($item_result->quantity == 0) {
                 throw new \Exception('The Item is empty!');
             } else if ($transaction_arr['quantity'] > $item_result->quantity) {
-                $_SESSION['message'] = "The Item in Stock is . $item_result->quantity ";
-                $_SESSION['error_type'] = "error";
+                die();
             } else {
                 $transaction = new Transaction;
                 $transaction->create($transaction_arr);
                 $transactions = $transaction->get_by_id_title($transaction->connection->insert_id);
 
                 $stmt_transaction = $transaction->connection->prepare("INSERT INTO users_transactions (transaction_id,user_id) VALUES (?,?)");
-                $stmt_transaction->bind_param('ii',$transactions->id,$this->request_body['user_id']);
+                $stmt_transaction->bind_param('ii', $transactions->id, $this->request_body['user_id']);
                 $stmt_transaction->execute();
                 $stmt_transaction->close();
 
                 $item_current = $item_result->quantity - $quantity_order;
 
                 $stmt_item = $item->connection->prepare("UPDATE items SET quantity = ? WHERE id = ?");
-                $stmt_item->bind_param('ii',$item_current,$item_result->id);
+                $stmt_item->bind_param('ii', $item_current, $item_result->id);
                 $stmt_item->execute();
                 $stmt_item->close();
 
@@ -185,7 +184,7 @@ class Selling extends Controller
 
 
         $stmt = $item->connection->prepare("UPDATE items SET quantity = ? WHERE id = ?");
-        $stmt->bind_param('ii',$result,$item_id);
+        $stmt->bind_param('ii', $result, $item_id);
         $stmt->execute();
         $stmt->close();
 
@@ -198,19 +197,17 @@ class Selling extends Controller
         $this->permissions(['seller:read']);
         $item = new Item;
         $items = $item->get_all();
-        
+
         try {
             if (empty($items)) {
                 throw new \Exception('No items found Today!');
             }
             $this->response_schema['body'] = $items;
             $this->response_schema['message_code'] = "items_collected_successfuly";
-            
         } catch (\Exception $error) {
             $this->response_schema['success'] = false;
             $this->response_schema['message_code'] = $error->getMessage();
             $this->http_code = 404;
         }
     }
-
 }
