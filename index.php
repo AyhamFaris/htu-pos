@@ -3,10 +3,8 @@ session_start();
 
 use Core\Router;
 use Core\Model\User;
-use Core\Helpers\Fake;
 
 
-error_reporting(E_ALL ^ E_NOTICE);
 
 spl_autoload_register(function ($class_name) {
     if (strpos($class_name, 'Core') === false)

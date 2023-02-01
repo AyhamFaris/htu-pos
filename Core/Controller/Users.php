@@ -68,7 +68,8 @@ class Users extends Controller
         {
                 $this->permissions(['user:create']);
 
-                try {
+        
+
 
                         if (empty($_POST['username'])) {
 
@@ -133,10 +134,7 @@ class Users extends Controller
                                 $_SESSION['message'] = 'user Created';
                                 Helper::redirect('/users');
                         }
-                } catch (\Exception $error) {
-                        $this->response_schema['success'] = false;
-                        $this->response_schema['message_code'] = $error->getMessage();
-                }
+               
         }
 
         /**

@@ -1,4 +1,4 @@
-const url = "http://htu.pos";
+const url = "https://funny-bhabha.165-232-116-43.plesk.page";
 
 //ajax chart
 if (window.location.href === url+"/dashboard") {

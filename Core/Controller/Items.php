@@ -67,8 +67,6 @@ class Items extends Controller
     {
         $this->permissions(['item:create']);
 
-        try {
-
             if (empty($_POST['title'])) {
 
                 $_SESSION['error_type'] = "error";
@@ -114,10 +112,6 @@ class Items extends Controller
                 $_SESSION['message'] = 'Item Created';
                 Helper::redirect('/items');
             }
-        } catch (\Exception $error) {
-            $this->response_schema['success'] = false;
-            $this->response_schema['message_code'] = $error->getMessage();
-        }
     }
 
     /**
@@ -177,6 +171,5 @@ class Items extends Controller
         $this->view = 'items.top';
         $item = new Item();
         $this->data['items'] = $item->get_top_5();
-        $this->data['items_count'] = count($item->get_top_5());
     }
 }
